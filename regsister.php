@@ -1,10 +1,24 @@
-<!DOC<?php include 'header.php'; ?>
+<?php 
+include 'header.php';
+include("inc/User.php");
+?>
+<?php 
+$User = new User();
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
+    $useregis = $User->userRegitration($_POST);
+}
+?>
 <div class="row justify-content-center">
  
                     <div class="col-md-8">
                         <div class="card">
                             <div class="card-header">Register</div>
                             <div class="card-body">
+                                <?php 
+                                if (isset($useregis)) {
+                                    echo $useregis;
+                                }
+                                ?>
                                 <form class="form-horizontal" method="post" action="#">
 
                                     <div class="mb-3">
@@ -42,7 +56,7 @@
 										  <input type="password" name="confirm_password" class="form-control" id="exampleFormControlInput1" placeholder="Confirm Password">
 									</div>
 									 <div class="col-auto">
-										    <button type="submit" class="btn btn-primary mb-3">Register</button>
+										    <button type="submit" name="submit" class="btn btn-primary mb-3">Register</button>
 										  </div>
                                 </form>
                             </div>
