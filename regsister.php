@@ -1,43 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Register</title>
-	 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-	<nav class="navbar navbar-expand-lg navbar-light navbar-laravel">
-    <div class="container">
-    <a class="navbar-brand" href="#">Health Watch</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-                <a class="nav-link" href="index.php">Login</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="regsister.php">Register</a>
-            </li>
-        </ul>
-
-    </div>
-    </div>
-</nav>
-	<div class="container">
-		 <div class="row">
-    <div class="col-4"></div>
-    <div class="col-4">
-    	<div class="logo">
-    	<img src="images/logo.png" class="rounded mx-auto d-block" alt="..."></div>
-    	</div>
-    <div class="col-4"></div>
-  </div>
+<!DOC<?php include 'header.php'; ?>
 <div class="row justify-content-center">
  
                     <div class="col-md-8">
@@ -50,7 +11,7 @@
 										  <input type="text" class="form-control" name="name" id="exampleFormControlInput1" placeholder="Your Name">
 									</div>
                                     <div class="mb-3">
-										  <input type="text" class="form-control" name="Mobile" id="exampleFormControlInput1" placeholder="Your Mobile">
+										  <input type="text" class="form-control" name="mobile" id="exampleFormControlInput1" placeholder="Your Mobile">
 									</div>
 									<div class="mb-3">
   								<label class="form-label">Gender</label><br>
@@ -69,16 +30,16 @@
 									</div>
 									<div class="mb-3">
 										  <label for="exampleFormControlTextarea1" class="form-label">Address</label>
-										  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+										  <textarea class="form-control" name="address" id="exampleFormControlTextarea1" rows="3"></textarea>
 										</div>
                                     <div class="mb-3">
-										  <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Your Email">
+										  <input type="email" name="email" class="form-control" id="exampleFormControlInput1" placeholder="Your Email">
 									</div>
                                     <div class="mb-3">
-										  <input type="password" class="form-control" id="exampleFormControlInput1" placeholder="Your Password">
+										  <input type="password" name="password" class="form-control" id="exampleFormControlInput1" placeholder="Your Password">
 									</div>
                                     <div class="mb-3">
-										  <input type="password" class="form-control" id="exampleFormControlInput1" placeholder="Confirm Password">
+										  <input type="password" name="confirm_password" class="form-control" id="exampleFormControlInput1" placeholder="Confirm Password">
 									</div>
 									 <div class="col-auto">
 										    <button type="submit" class="btn btn-primary mb-3">Register</button>
