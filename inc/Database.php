@@ -1,5 +1,4 @@
 <?php
-
 class Database
 {
 	private $host = "localhost";
@@ -13,15 +12,13 @@ class Database
 		if (!isset($this->pdo)) {
 			try
 		    {
-		        $dbconect = new PDO('mysql:host='. $this->$host .',dbname='.$this->$db_name, $this->$db_username, $this->$db_password);	
-		        $dbconect->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-		        $dbconect->exec("Set charecter set uf8");
-		        $this->pdo = $dbconect;
-
+		        $dbconect = new PDO("mysql:host=$this->host;dbname=$this->db_name", $this->db_username, $this->db_password, array(PDO::ATTR_ERRMODE => PDO::ERRMODE_WARNING));				
 		    }
 		    catch (PDOException $e)
 		    {
-		        die('Error Connecting To DataBase'.$e->getMessage);
+				$error_message = $e->getMessage();
+				echo $error_message;
+				exit();
 		    }
 		}
 	}

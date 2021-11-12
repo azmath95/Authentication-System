@@ -95,7 +95,7 @@ class User
 			return $msg;
 		}
 	}
-	public function getLoginUser($email, $password);
+	public function getLoginUser($email, $password)
 	{
 		$sql = "SELECT * FROM tb_register WHERE email = :email AND password = :password LIMIT 1";
 			$query = $this->db->pdo->prepare($sql);

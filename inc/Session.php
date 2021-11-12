@@ -9,11 +9,11 @@ class Session
 {
 	if (version_compare(phpversion(), '7.4', '<')) {
 		if (session_id() == '') {
-			session_start()
+			session_start();
 		}
 	}else {
 		if (session_status() == PHP_SESSION_NONE) {
-			session_start()
+			session_start();
 		}
 	}
 }
@@ -28,6 +28,11 @@ public static function set($key, $val){
 		else{
 			return false;
 		}
+	}
+	public static function destroy(){
+		session_destroy();
+		session_unset();
+		header("location: login.php");
 	}
 }
  ?>

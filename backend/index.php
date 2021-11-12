@@ -1,3 +1,8 @@
+<?php
+$filepath = realpath(direname(__FILE__));
+include_once $filepath.'../inc/Session.php';
+session::init();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +14,11 @@
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
+<?php 
+  if (isset($_GET['action']) && $_GET['action'] == "logout") {
+    # code...
+  }
+?>
 
         <!--===================
         Header
@@ -149,7 +158,7 @@
                   <span class="hidden-xs">Action</span>
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <a class="dropdown-item" href="#">Logout</a>
+                  <a class="dropdown-item" href="?action=logout">Logout</a>
                 </div>
               </li>
             </ul>
