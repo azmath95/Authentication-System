@@ -1,13 +1,23 @@
 <?php 
-include_once("inc/User.php");
-$user = new User();
-include 'header.php'; 
+include 'header.php';
+include("inc/User.php");
+?>
+<?php 
+$User = new User();
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
+    $userLogin = $User->userLogin($_POST);
+}
 ?>
 <div class="row justify-content-center">
  
                     <div class="col-md-8">
                         <div class="card">
                             <div class="card-header">Login</div>
+                            <?php 
+                                if (isset($userLogin)) {
+                                    echo $userLogin;
+                                }
+                                ?>
                             <div class="card-body">
                                 <form class="form-horizontal" method="post" action="#">
                                     <div class="mb-3">
@@ -17,7 +27,7 @@ include 'header.php';
 										  <input type="password" class="form-control" id="exampleFormControlInput1" placeholder="Your Password">
 									</div>
 									 <div class="col-auto">
-										    <button type="submit" class="btn btn-primary mb-3">Login</button>
+										    <button type="submit" name="submit" class="btn btn-primary mb-3">Login</button>
 										  </div>
                                 </form>
                             </div>
