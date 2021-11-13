@@ -1,4 +1,4 @@
-      <a class="copyright" href="http://unsadacoder.or.id">Development by Rakib</a>
+      <a class="copyright" href="#">Development by Rakib</a>
     </div>
   </body>
 </html>
